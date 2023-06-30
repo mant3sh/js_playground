@@ -1,0 +1,16 @@
+const a = document.querySelector("#input");
+function dbounce(cb, d) {
+  let timer = null;
+  return function () {
+    if (timer) clearTimeout(timer);
+    const context = this;
+    const args = arguments;
+    timer = setTimeout(() => {
+      cb.apply(context, arguments);
+    }, d);
+  };
+}
+const myDbounce = dbounce((e) => {
+  console.log(e.target.value);
+}, 800);
+a.addEventListener("input", myDbounce);
