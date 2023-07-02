@@ -22,4 +22,5 @@ function get(obj, path) {
     return obj[key];
   }, obj);
 }
-console.log(get(obj, ["a", "b", "c", "3"]));
+const res=get(obj, ["a", "b", "c", "3"]);
+console.log(res)
