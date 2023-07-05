@@ -11,6 +11,6 @@ function dbounce(cb, d) {
   };
 }
 const myDbounce = dbounce((e) => {
-  console.log(e.target.value);
+  console.log(e.target.value,"debounce value");
 }, 800);
 a.addEventListener("input", myDbounce);
