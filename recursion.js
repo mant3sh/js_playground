@@ -23,3 +23,25 @@ function get(obj, path) {
   }, obj);
 }
 console.log(get(obj, ["a", "b", "c", "3"]));
+const user = {
+  name: "mahantesha",
+  city: {
+    homeTown: {
+      tumkur: {
+        locality: "siraGate",
+      },
+    },
+  },
+};
+const finaloutPut = {};
+function microSoft_Interview_Question(obj, address) {
+  for (let keys in obj) {
+    if (typeof obj[keys] === "object") {
+      microSoft_Interview_Question(obj[keys], address + "_" + keys);
+    } else {
+      finaloutPut[address + "_" + keys] = obj[keys];
+    }
+  }
+}
+microSoft_Interview_Question(user, "user");
+console.log(finaloutPut);
